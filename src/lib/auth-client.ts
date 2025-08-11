@@ -1,5 +1,5 @@
-import { toNextJsHandler } from "better-auth/next-js";
+import { createAuthClient } from "better-auth/react"; // make sure to import from better-auth/react
 
-import { auth } from "@/lib/auth";
-
-export const { GET, POST } = toNextJsHandler(auth.handler);
+export const authClient = createAuthClient({
+  //you can pass client configuration here
+});
