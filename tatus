@@ -1,0 +1,19 @@
+[33m5550bbf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m feat: add cart item
+[33m5fee6fe[m feat: ensure a product can be added to cart and add cart component
+[33m997cb7d[m feat: add product to cart action
+[33mcc33cd2[m chore: add cart tables
+[33m72c1302[m chore: add shipping address table
+[33m3ae4329[m feat: add product page
+[33mde35b8c[m feat: add category products page
+[33med9c6ba[m feat: add sign in with google
+[33md9f2349[m feat: add category selector
+[33ma5c1675[m feat: add product list and product item components
+[33m5e23193[m feat: add sign in with email and password and sign out
+[33m0141e3c[m feat: add sign in with email and password
+[33m9a645a5[m feat: add sign up
+[33m0292ba7[m chore: add better auth setup
+[33m1e8db13[m chore: add better auth tables
+[33m9b500a2[m feat: add ui for sign in and sign up form components
+[33m195a5e2[m chore: add drizzle setup with initial schema; add seed script
+[33m85f87a5[m chore: update shadcn theme
+[33m99f223d[m chore: add eslint, prettier and shadcn setup
