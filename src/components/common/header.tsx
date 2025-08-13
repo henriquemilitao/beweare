@@ -18,7 +18,6 @@ import {
 
 export const Header = () => {
   const { data: session } = authClient.useSession();
-  console.log(session);
   return (
     <header className="flex items-center justify-between p-5">
       <Link href="/">
