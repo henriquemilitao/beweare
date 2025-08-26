@@ -6,8 +6,6 @@ import Stripe from "stripe";
 
 import { db } from "@/db";
 import {
-  cartItemTable,
-  cartTable,
   orderItemTable,
   orderTable,
 } from "@/db/schema";

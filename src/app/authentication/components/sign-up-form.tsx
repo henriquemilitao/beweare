@@ -1,7 +1,6 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { error } from "console";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -60,7 +59,7 @@ const SignUpForm = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const { data } = await authClient.signUp.email({
+    await authClient.signUp.email({
       name: values.name, // required
       email: values.email, // required
       password: values.password, // required
