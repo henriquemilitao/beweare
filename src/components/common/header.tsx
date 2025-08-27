@@ -22,7 +22,7 @@ export const Header = () => {
   return (
     <header className="flex items-center justify-between p-5 sticky top-0 bg-white h-16 shadow z-50 mb-4 shadow-none">
       <Link href="/">
-        <Image src="/logo.svg" alt="BEWEAR" width={100} height={26.14} />
+        <Image src="/Logo.svg" alt="BEWEAR" width={100} height={26.14} />
       </Link>
 
       <div className="flex items-center gap-3">
