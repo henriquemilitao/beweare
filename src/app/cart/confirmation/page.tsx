@@ -60,18 +60,7 @@ const ConfirmationPage = async () => {
             <FinishOrderButton />
           </CardContent>
         </Card>
-        <CartSummary
-          subtotalInCents={cartTotalInCents}
-          totalInCents={cartTotalInCents}
-          products={cart.items.map((item) => ({
-            id: item.productVariant.id,
-            name: item.productVariant.product.name,
-            variantName: item.productVariant.name,
-            quantity: item.quantity,
-            priceInCents: item.productVariant.priceInCents,
-            imageUrl: item.productVariant.imageUrl,
-          }))}
-        />
+        <CartSummary />
       </div>
       <div className="mt-12">
         <Footer />
