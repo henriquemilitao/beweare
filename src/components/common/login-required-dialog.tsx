@@ -1,9 +1,10 @@
 "use client";
 
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogTitle } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
+
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogTitle } from "@/components/ui/dialog";
 
 interface LoginRequiredDialogProps {
   open: boolean;

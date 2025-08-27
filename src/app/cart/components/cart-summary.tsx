@@ -1,19 +1,18 @@
 "use client";
 
-import Image from "next/image";
-import { toast } from "sonner";
 import { MinusIcon, PlusIcon, TrashIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { toast } from "sonner";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { formatCentsToBRL } from "@/helpers/money";
-
-import { useCart } from "@/hooks/queries/use-cart";
-import { useRemoveProductFromCart } from "@/hooks/mutations/use-remove-product-from-cart";
 import { useDecreaseCartProduct } from "@/hooks/mutations/use-decrease-cart-product";
 import { useIncreaseCartProduct } from "@/hooks/mutations/use-increase-cart-product";
-import Link from "next/link";
+import { useRemoveProductFromCart } from "@/hooks/mutations/use-remove-product-from-cart";
+import { useCart } from "@/hooks/queries/use-cart";
 
 interface CartSummaryProps {
   final?: boolean

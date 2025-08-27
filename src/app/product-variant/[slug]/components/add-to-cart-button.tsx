@@ -2,12 +2,13 @@
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { addProductToCart } from "@/actions/add-cart-product";
 import { useRouter } from "next/navigation";
-import { authClient } from "@/lib/auth-client";
 import { useState } from "react";
+
+import { addProductToCart } from "@/actions/add-cart-product";
 import { LoginRequiredDialog } from "@/components/common/login-required-dialog";
+import { Button } from "@/components/ui/button";
+import { authClient } from "@/lib/auth-client";
 
 interface AddToCartButtonProps {
   productVariantId: string;

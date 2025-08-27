@@ -3,6 +3,7 @@
 import { LogInIcon, LogOutIcon, MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { authClient } from "@/lib/auth-client";
 
@@ -16,7 +17,6 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 import { Cart } from "./cart";
-import { useRouter } from "next/navigation";
 
 export const Header = () => {
   const { data: session } = authClient.useSession();
