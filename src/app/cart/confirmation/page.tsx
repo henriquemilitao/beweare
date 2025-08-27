@@ -60,7 +60,7 @@ const ConfirmationPage = async () => {
             <FinishOrderButton />
           </CardContent>
         </Card>
-        <CartSummary />
+        <CartSummary final={false} />
       </div>
       <div className="mt-12">
         <Footer />

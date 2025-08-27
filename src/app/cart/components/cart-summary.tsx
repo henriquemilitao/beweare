@@ -15,7 +15,11 @@ import { useDecreaseCartProduct } from "@/hooks/mutations/use-decrease-cart-prod
 import { useIncreaseCartProduct } from "@/hooks/mutations/use-increase-cart-product";
 import Link from "next/link";
 
-export default function CartSummary() {
+interface CartSummaryProps {
+  final?: boolean
+}
+
+export default function CartSummary({final = true}: CartSummaryProps) {
   // Busca reativa do carrinho (fica em sync com os botões)
   const { data: cart } = useCart();
 
@@ -77,6 +81,7 @@ export default function CartSummary() {
                 priceInCents={item.productVariant.priceInCents}
                 quantity={item.quantity}
                 productVariantId={item.productVariant.id}
+                final={final}
               />
             ))
           )}
@@ -95,6 +100,7 @@ function SummaryRow(props: {
   imageUrl: string;
   priceInCents: number;
   quantity: number;
+  final: boolean
 }) {
   const removeMutation = useRemoveProductFromCart(props.id);
   const decMutation = useDecreaseCartProduct(props.id);
@@ -118,10 +124,10 @@ function SummaryRow(props: {
           </p>
 
           {/* controles de quantidade */}
-          <div className="flex w-[112px] items-center justify-between rounded-lg border p-1">
+          {props.final ? <div className="flex w-[112px] items-center justify-between rounded-lg border p-1">
             <Button
+              variant="outline"
               className="h-5 w-5"
-              variant="ghost"
               onClick={() =>
                 decMutation.mutate(undefined)
               }
@@ -132,20 +138,22 @@ function SummaryRow(props: {
             <p className="text-xs font-medium">{props.quantity}</p>
 
             <Button
+              variant="outline"
               className="h-5 w-5"
-              variant="ghost"
               onClick={() =>
                 incMutation.mutate(undefined)
               }
             >
               <PlusIcon className="h-3 w-3" />
             </Button>
-          </div>
+          </div> : 
+          <p className="text-xs font-medium">Quantidade: {props.quantity }</p>
+          }
         </div>
       </div>
 
       <div className="flex flex-col items-end justify-center gap-2">
-        <Button
+        {props.final && <Button
           variant="outline"
           size="icon"
           onClick={() =>
@@ -156,7 +164,7 @@ function SummaryRow(props: {
           }
         >
           <TrashIcon className="h-4 w-4" />
-        </Button>
+        </Button>}
 
         <p className="text-sm font-bold">
           {formatCentsToBRL(props.priceInCents)}
