@@ -16,9 +16,12 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 import { Cart } from "./cart";
+import { useRouter } from "next/navigation";
 
 export const Header = () => {
   const { data: session } = authClient.useSession();
+  const router = useRouter();
+
   return (
     <header className="flex items-center justify-between p-5 sticky top-0 bg-white h-16 shadow z-50 mb-4 shadow-none">
       <Link href="/">
@@ -61,7 +64,10 @@ export const Header = () => {
                     <Button
                       variant="outline"
                       size="icon"
-                      onClick={() => authClient.signOut()}
+                      onClick={async () => {
+                        authClient.signOut();
+                        router.refresh(); // faz reload do server component
+                      }}
                     >
                       <LogOutIcon />
                     </Button>
