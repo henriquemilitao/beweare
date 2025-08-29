@@ -2,10 +2,13 @@
 
 import { LogInIcon, ShoppingBasketIcon } from "lucide-react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { formatCentsToBRL } from "@/helpers/money";
 import { useCart } from "@/hooks/queries/use-cart";
+import { authClient } from "@/lib/auth-client";
 
 import { ScrollArea } from "../ui/scroll-area";
 import { Separator } from "../ui/separator";
@@ -17,9 +20,6 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 import CartItem from "./cart-item";
-import { authClient } from "@/lib/auth-client";
-import { useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import { PersonilazedDialog } from "./personalized-dialog";
 
 

@@ -1,9 +1,9 @@
 import { Header } from "@/components/common/header";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { db } from "@/db";
 
 import SignInForm from "./components/sign-in-form";
 import SignUpForm from "./components/sign-up-form";
-import { db } from "@/db";
 
 const Authentication = async () => {
   const categories = await db.query.categoryTable.findMany({});

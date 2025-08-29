@@ -13,10 +13,13 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
+import { categoryTable } from "@/db/schema";
+import { useCart } from "@/hooks/queries/use-cart";
 import { authClient } from "@/lib/auth-client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
+import { Separator } from "../ui/separator";
 import {
   Sheet,
   SheetClose,
@@ -26,10 +29,7 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 import { Cart } from "./cart";
-import { Separator } from "../ui/separator";
-import { categoryTable } from "@/db/schema";
 import { PersonilazedDialog } from "./personalized-dialog";
-import { useCart } from "@/hooks/queries/use-cart";
 
 interface HeaderProps {
   categories: (typeof categoryTable.$inferSelect)[];
