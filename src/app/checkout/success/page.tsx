@@ -16,10 +16,10 @@ import { db } from "@/db";
 
 const CheckoutSuccessPage = async () => {
 
-  const categories = await db.query.categoryTable.findMany();
+  // const categories = await db.query.categoryTable.findMany();
   return (
     <>
-      <Header categories={categories} />
+      {/* <Header categories={categories} /> */}
       <Dialog open={true} onOpenChange={() => {}}>
         <DialogContent className="text-center">
           <Image
