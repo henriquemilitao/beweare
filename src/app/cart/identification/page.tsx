@@ -43,9 +43,12 @@ const IdentificationPage = async () => {
     (acc, item) => acc + item.productVariant.priceInCents * item.quantity,
     0,
   );
+
+  const categories = await db.query.categoryTable.findMany({});
+  
   return (
     <div>
-      <Header />
+      <Header categories={categories} />
       <div className="space-y-4 px-5">
         <Addresses
           shippingAddresses={shippingAddresses}

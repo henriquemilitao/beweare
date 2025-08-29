@@ -12,11 +12,14 @@ import {
   DialogFooter,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { db } from "@/db";
 
-const CheckoutSuccessPage = () => {
+const CheckoutSuccessPage = async () => {
+
+  const categories = await db.query.categoryTable.findMany();
   return (
     <>
-      <Header />
+      <Header categories={categories} />
       <Dialog open={true} onOpenChange={() => {}}>
         <DialogContent className="text-center">
           <Image

@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { addProductToCart } from "@/actions/add-cart-product";
-import { LoginRequiredDialog } from "@/components/common/login-required-dialog";
+import { PersonilazedDialog } from "@/components/common/personalized-dialog";
 import { Button } from "@/components/ui/button";
 import { authClient } from "@/lib/auth-client";
 
@@ -59,7 +59,7 @@ const AddToCartButton = ({
         {isPending && <Loader2 className="animate-spin mr-2" />}
         {text}
       </Button>
-      <LoginRequiredDialog open={showDialog} onOpenChange={setShowDialog} />
+      <PersonilazedDialog open={showDialog} onOpenChange={setShowDialog} />
     </>
   );
 };

@@ -43,7 +43,7 @@ const ProductActions = ({ productVariantId }: ProductActionsProps) => {
         <AddToCartButton
           productVariantId={productVariantId}
           quantity={quantity}
-          text="Adicionar à sacola"
+          text="Adicionar ao carrinho"
           variant="outline"
         />
         <AddToCartButton

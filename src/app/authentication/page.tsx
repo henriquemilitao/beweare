@@ -3,11 +3,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import SignInForm from "./components/sign-in-form";
 import SignUpForm from "./components/sign-up-form";
+import { db } from "@/db";
 
 const Authentication = async () => {
+  const categories = await db.query.categoryTable.findMany({});
   return (
     <>
-      <Header />
+      <Header categories={categories} />
 
       <div className="flex w-full flex-col gap-6 p-5">
         <Tabs defaultValue="sign-in">
